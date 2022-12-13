@@ -1,0 +1,16 @@
+main {
+  padding: 2rem
+}
+
+span {
+  color: purple;
+  font-weight: bold;
+}
+
+form {
+  border: 2px solid purple;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 60%;
+}
