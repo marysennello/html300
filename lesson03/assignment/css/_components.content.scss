@@ -10,8 +10,76 @@ html {
 
 .main {
     padding: 2rem;
+    margin: 4rem;
+    background-color: $white;
+    color: $darkgray;
+}
+section {
+  margin: 4rem;
 }
 
-h1 {
-    color: $red;  
+.card-container {
+  padding: 1rem;
+  margin-bottom: 4rem;
+  background-color: $white;
+  border: 20px solid $darkgray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+  max-width: 60%;
+  @include mediaQuery(mobile) {
+    max-width: 100%;
+  }
+
+  & .left {
+    //grid-column: 1;
+    text-align: center;
+
+    & .profile-img {
+      max-width: 200px;
+      border-radius: 100px;
+      background-color: $lightgray
+    }
+    & h2 {
+        color: $darkgray;
+        margin-bottom: 0.5rem;
+    }
+    & .caption {
+      font-style: italic;
+      font-weight: lighter;
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+  }
+  & .right {
+    background-color: $lightgray;
+    align-self: auto;
+    padding: 0.5rem;
+    //max-width: 60%;
+    & .bold {
+      font-weight: bold;
+    }
+    & ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 1rem;
+    }
+    & li {
+      padding-bottom: 1rem;
+      margin-left: 0;
+      max-width: 300px;
+
+      //overflow-wrap: break-word;
+      //word-wrap: break-word;
+      //max-width: 80%;
+    }
+    & .bug {
+      max-width: 25px;
+      margin-right: 0.5rem;
+      margin-left: 1rem;
+      padding-bottom: 0;
+    }
+  }
 }
