@@ -1,0 +1,83 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+body {
+  background-color: $cream;
+  margin: 0;
+}
+
+header {
+  background-color: $forest;
+  height: 24rem;
+  padding: 1rem 2rem;
+
+  & .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+  }
+  & h1 {
+    font-family: $font-serif;
+    color: $cream;
+    font-size: 3.5rem;
+  }
+}
+
+nav {
+  height: 4rem;
+  background-color: $grass;
+  padding: 0 15rem;
+
+  & .nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: inherit;
+  }
+
+  & a {
+    font-family: $font-sans;
+    color: $forest;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  & a:hover {
+    color: $cream;
+    text-decoration: underline;
+  }
+}
+
+main {
+  color: $forest;
+  padding: 2rem 12rem;
+
+  & h2 {
+    font-family: $font-sans;
+    text-align: center;
+  }
+  & p {
+    font-family: $font-serif;
+  }
+  & button {
+    background-color: $steel;
+    color: $cream;
+    text-align: center;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+  }
+  & button:hover {
+    background-color: $forest;
+    //border: 2px $cream;
+    border-radius: 4px;
+  }
+}
