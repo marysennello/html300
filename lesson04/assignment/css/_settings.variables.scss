@@ -4,7 +4,7 @@ $grass: #92c582;
 $steel: #86a5a9;
 $gray: #767676;
 $black: rgb( 0,0,0);
-$black-85: rgb( 0,0,0, 0.85);
+$black-85: rgba( 0,0,0, 0.85);
 
 $forest: #536f50;
 $forest-15: rgba( 83, 111, 80, 0.15);
@@ -12,10 +12,10 @@ $forest-35: rgba( 83, 111, 80, 0.35);
 $forest-85: rgba( 83, 111, 80, 0.85);
 
 $charcoal: #36454F;
-$charcoal-35: ( 54, 69, 79, 0.35);
+$charcoal-35: rgba( 54, 69, 79, 0.35);
 $charcoal-dark: #242f36;
-$charcoal-dark-35: ( 36, 47, 54, 0.35);
-$charcoal-dark-85: ( 36, 47, 54, 0.85);
+$charcoal-dark-35: rgba( 36, 47, 54, 0.35);
+$charcoal-dark-85: rgba( 36, 47, 54, 0.85);
 
 //font
 $font-serif: 'Rufina', serif;

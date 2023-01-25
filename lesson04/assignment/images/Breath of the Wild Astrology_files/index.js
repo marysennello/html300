@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let signsToClick = document.querySelectorAll('.sign li');
   let signSelect = document.querySelectorAll('.sign-select');
 
-  //sign blocks in results container
+  //sign blocks in container
   let sunSign = document.getElementById('sunSign');
   let moonSign = document.getElementById('moonSign');
   let risingSign = document.getElementById('risingSign');
@@ -27,10 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
   window.onscroll = function() {stickyHeader()};
   let sticky = (header.offsetTop);
   function stickyHeader() {
-    if (window.pageYOffset > (sticky+20)) {
+    if (window.pageYOffset > (sticky) {
       header.classList.add('sticky');
       header.classList.remove('unstick');
-    }else if (window.pageYOffset <= sticky+20) {
+      console.log(sticky+20)
+      //scroll-up grows Header
+    }else if (window.pageYOffset <= sticky) {
       header.classList.remove('sticky');
       header.classList.add('unstick')
     }
@@ -68,23 +70,18 @@ document.addEventListener("DOMContentLoaded", function () {
       natalButton.classList.add('hidden');
     }
 
-    //reset - remove results section and add back buttons
+    //reset
     let resetClicked = resetButton.addEventListener('click', hideResults)
-    let chosenSigns = document.querySelectorAll('.sign')
+
     function hideResults(){
       resultsContainer.classList.remove('container');
       resultsContainer.classList.add('sign-chosen-hidden');
-      //hide reset button and reveal other buttons
+      //hide buttons and reveal reset button
       resetButton.classList.add('hidden');
       calculateButton.classList.remove('hidden');
       natalButton.classList.remove('hidden');
-      //reset sign choices
-      for (let i = 0; i < chosenSigns.length; i++){
-          let resetSign = chosenSigns[i].parentElement.nextElementSibling;
-          resetSign.classList.remove('sign-chosen')
-          resetSign.classList.add('sign-chosen-hidden')
-      }
     }
+
 
   //update results Section
 
@@ -95,5 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //results appear when a sign is selected....s o if sun sign's 2nd li is filled with text, the result for sun will appear with sun sign listed, result(?) etc....
 
+//--add animation for when sign appears in box
 
 //--add selector boxes to see categories??? weapons, monsters, etc.

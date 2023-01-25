@@ -10,6 +10,7 @@ html {
 }
 
 body {
+
   background-image: url("../images/stars-unsplash.jpg");
   background-color: $forest-35;
   background-blend-mode: multiply;
@@ -22,16 +23,13 @@ body {
 .hidden {
   display: none;
 }
-
 /*HEADER*/
-
 header {
   padding: 1rem 2rem;
   height: 16rem;
-
+  margin-top: 0rem;
   /*background-color: $forest;
   background-blend-mode: hard-light; */
-
   & h1 {
     font-family: $font-syne;
     color: $cream;
@@ -45,8 +43,8 @@ header {
     align-items: center;
     height: inherit;
   }
-
 }
+
 .sticky {
   background-color: $black-85;
   position: fixed;
@@ -56,16 +54,17 @@ header {
   top: 0;
   border-radius: $border-outer-bottom;
   border-bottom: 1px $forest solid;
-  background-color: $black-85;
+  background-color: $black;
   box-shadow: $shadow-1;
   animation-name: stickyHeader;
   //animation-delay: 50ms;
   animation-duration: 400ms;
   animation-timing-function: ease-out;
   animation-direction: forwards;
-    & h1 {
+
+  & h1 {
     font-size: 1.5rem;
-    }
+  }
 }
 
 .sticky + nav {
@@ -78,11 +77,12 @@ header {
   animation-duration: 400ms;
   //animation-delay: 0ms;
   animation-timing-function: ease-out;
+  margin-bottom: 1rem;
+
   & h1 {
     font-size: 3.5rem;
   }
 }
-
 @keyframes stickyHeader {
   0% {
     height: 16rem;
@@ -90,17 +90,20 @@ header {
     border-bottom-color: $forest;
     box-shadow: $inner-shadow;
   }
+
   35% {
     background-color: $charcoal-dark-35;
   }
-  85%{
+
+  85% {
     background-color: $charcoal-dark-85;
   }
+
   100% {
     height: 6rem;
     border-radius: $border-outer-bottom;
     border-bottom: 1px $forest solid;
-    background-color: $black-85;
+    background-color: $black;
   }
 }
 @keyframes unstickHeader {
@@ -115,7 +118,7 @@ header {
     background-color: $charcoal-dark-35;
     border-bottom: 1px $forest solid;
   }
-  85%{
+  85% {
     background-color: $charcoal-dark-85;
     border-bottom: 1px $forest solid;
   }
@@ -127,12 +130,10 @@ header {
   }
 }
 
-
 /*NAVIGATION*/
 nav {
   height: 4rem;
   padding: 0 15rem;
-
   & .nav-container {
     background-color: $charcoal-dark;
     border-radius: $border-outer;
@@ -142,13 +143,12 @@ nav {
     height: inherit;
     padding: 0 15rem;
   }
- /*created nav-link-box to prevent other links from moving when one is hovered on*/
+  /*created nav-link-box to prevent other links from moving when one is hovered on*/
   & .nav-link-box {
     width: 8rem;
     align-self: center;
     justify-content: center;
     text-align: center;
-
     & a {
       font-family: $font-inter;
       color: $grass;
@@ -160,7 +160,7 @@ nav {
       animation-timing-function: ease-out;
       animation-fill-mode: forwards;
     }
-
+    /*hover on nav links background appear*/
     & a:hover {
       color: $cream;
       animation-name: linkhover;
@@ -177,7 +177,6 @@ nav {
         background-color: $charcoal;
         //transform: rotateY(-90deg) translateY(30px);
       }
-
       100% {
         opacity: 1;
         padding: 1rem 2rem;
@@ -194,7 +193,6 @@ nav {
         background-color: $charcoal;
         box-shadow: $inner-shadow;
       }
-
       100% {
         background-color: none;
       }
@@ -205,12 +203,11 @@ nav {
 /*MAIN BODY CONTENT*/
 main {
   /*general*/
-  padding-top: 4rem;
+  padding-top: 1rem;
   color: $cream;
   margin-left: 8rem;
   margin-right: 8rem;
-  min-height: 32rem;
-  overflow: auto;
+  min-height: 36rem;
 
   & h1 {
     font-family: $font-syne;
@@ -233,10 +230,12 @@ main {
     padding: 1rem 6rem;
     background-color: $charcoal;
   }
+
   & .natalChart {
     background-color: $gray;
     padding: 1rem;
   }
+
   & .resetCalculate {
     padding: 1rem 6rem;
     background-color: $charcoal;
@@ -247,7 +246,6 @@ main {
     cursor: pointer;
     box-shadow: $shadow-1;
   }
-
   /*SECTION FOR --SELECTING-- BIG 3*/
   /*flex box for selecting big 3*/
   & .container-select {
@@ -273,19 +271,17 @@ main {
 
     & li {
       width: 150px;
-      height: 35px;
-      line-height: 35px;
+      height: 24px;
+      line-height: 24px;
       position: relative;
       text-transform: uppercase;
       //font-size: 14px;
       cursor: pointer;
     }
-
     /*hide list of signs until hovered*/
     & .sign {
       display: none;
     }
-
     /*reveal list of signs while hovering on sign-selector box*/
     & .sign-select:hover {
       background-color: $forest;
@@ -354,22 +350,23 @@ main {
       color: $forest;
       background-color: $grass;
     }
-}
+  }
   /*end of container-select */
-
   /*SECTION FOR --RESULTS--OF BIG 3*/
   & .sign-chosen-hidden {
-        display: none;
-      }
+    display: none;
+  }
 
   & .container {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-
+    /*ANIMATION FOR BLOCKS SLIDING IN*/
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
     /*3 blocks to hold the 3 signs*/
     /*class of .block is for each sign's content*/
     & .block {
+      opacity: 0;
       margin: 1rem;
       padding: 1rem;
       background-color: $charcoal;
@@ -379,7 +376,25 @@ main {
       flex-direction: column;
       justify-content: center;
       box-shadow: $inner-shadow;
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          animation-name: showResults;
+          animation-duration: 300ms;
+          animation-delay: (300ms * $i) - 300;
+          animation-timing-function: ease-out;
+          animation-fill-mode: forwards;
+        }
+        @keyframes showResults {
+          0% {
+            opacity: 0;
+            transform: rotateY(-270deg) translateY(30px);
+          }
 
+          100% {
+            opacity: 1;
+            transform: rotateY(0deg) translateY(0px);
+          }
+        }
       /*div.sign-img placeholder for image to pull from API*/
       & .sign-img {
         background-color: $charcoal-35;
@@ -391,7 +406,7 @@ main {
         background-size: cover;
         overflow: hidden;
         align-self: center;
-        box-shadow: shadow-2;
+        box-shadow: $shadow-2;
       }
 
       & h2,
@@ -406,6 +421,7 @@ main {
 }
 
 footer {
+  margin-top: 3rem;
   color: $cream;
   background-color: $forest;
   border-radius: $border-outer-top;
