@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Serif:wght@400;700&family=Rufina:wght@700&family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Breath of the Wild Astrology</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="index.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+  <header id="header">
+    <div class="header-container">
+      <div class="header">
+        <h1>Hyrulian Astrology</h1>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-link-box"><a href="https://characterprofile.fandom.com/wiki/Link_(Breath_of_the_Wild)">link</a></div>
+      <div class="nav-link-box"><a href="https://static.wikia.nocookie.net/characterprofile/images/c/c8/BotW_Link.png/revision/latest?cb=20170306180639">link</a></div>
+      <div class="nav-link-box"><a href="https://youtu.be/Foe8Jet8TVA">link</a></div>
+      <div class="nav-link-box"><a href="https://en.wikipedia.org/wiki/Link_(The_Legend_of_Zelda)">link</a></div>
+    </div>
+  </nav>
+  <main class="main">
+    <!--section to select signs-->
+    <section>
+      <h1>Welcome</h1>
+      <p>Please select your Sun, Moon, and Rising Signs below.</p>
+      <!--Section for user to select each of their signs - hover only works rn-->
+      <div class="container-select">
+        <!--SUN SIGN SELECT-->
+        <ul class="sign-select">
+          <li>Sun Sign
+            <ul class="sign">
+              <li>Aries</li>
+              <li>Taurus</li>
+              <li>Gemini</li>
+              <li>Cancer</li>
+              <li>Leo</li>
+              <li>Virgo</li>
+              <li>Libra</li>
+              <li>Scorpio</li>
+              <li>Sagittarius</li>
+              <li>Capricorn</li>
+              <li>Aquarius</li>
+              <li>Pisces</li>
+              <li>Unsure</li>
+            </ul>
+          </li>
+          <li class="sign-chosen-hidden sunSign"></li>
+        </ul>
+        <!--MOON SIGN SELECT-->
+        <ul class="sign-select">
+          <li>Moon Sign
+            <ul class="sign">
+              <li>Aries</li>
+              <li>Taurus</li>
+              <li>Gemini</li>
+              <li>Cancer</li>
+              <li>Leo</li>
+              <li>Virgo</li>
+              <li>Libra</li>
+              <li>Scorpio</li>
+              <li>Sagittarius</li>
+              <li>Capricorn</li>
+              <li>Aquarius</li>
+              <li>Pisces</li>
+              <li>Unsure</li>
+            </ul>
+          </li>
+          <li class="sign-chosen-hidden moonSign"></li>
+        </ul>
+        <!--RISING SIGN SELECT-->
+        <ul class="sign-select">
+          <li>Rising Sign
+            <ul class="sign">
+              <li>Aries</li>
+              <li>Taurus</li>
+              <li>Gemini</li>
+              <li>Cancer</li>
+              <li>Leo</li>
+              <li>Virgo</li>
+              <li>Libra</li>
+              <li>Scorpio</li>
+              <li>Sagittarius</li>
+              <li>Capricorn</li>
+              <li>Aquarius</li>
+              <li>Pisces</li>
+              <li>Unsure</li>
+            </ul>
+          </li>
+          <li class="sign-chosen-hidden risingSign"></li>
+        </ul>
+      </div>
+      <p>
+        <button class="calculate">What's in the stars?</button>
+        <button class="natalChart">Wait - I don't know mine!</button>
+        <button class="resetCalculate hidden">Reset</button>
+      </p>
+    </section>
+    <div id="resultsContainer" class="sign-chosen-hidden">
+      <!--3 columns containing image pulled from api, sign name from user input, image description from api, and description of why/how the sign relates. -->
+      <div class="block">
+        <h2 id="sunSign"> Example Sun
+          <!--javascript to populate "____ Sun"-->
+        </h2>
+        <h3>Result</h3>
+        <div class="sign-img sun-img"></div>
+        <p class="zelda-details">
+          <!--javascript to populate details about result-->
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p class="sign-details">
+          <!--javascript to populate details about result-->
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div class="block">
+        <h2 id="moonSign">Example Moon
+          <!--javascript to populate "____ Moon"-->
+        </h2>
+        <h3>Result
+        </h3>
+        <div class="sign-img moon-img"></div>
+        <p class="zelda-details">
+          <!--javascript to populate details about result-->
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p class="sign-details">
+          <!--javascript to populate details about result-->
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div class="block">
+        <h2 id="risingSign">Example Rising
+          <!--javascript to populate "____ Rising"-->
+        </h2>
+        <h3>Result
+        </h3>
+        <div class="sign-img rising-img"></div>
+        <p class="zelda-details">
+          <!--javascript to populate details about result-->
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p class="sign-details">
+          <!--javascript to populate details about result-->
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <section>
+      <h1>Information</h1>
+      <p>Astrological insights are referenced from <a href="https://a.co/d/0rDoknD">The Only Astrology Book You'll Ever Need</a> by Joanna Martine Woolfolk (2012)</p>
+      <p>Images and Descriptions are referenced from <a href="https://gadhagod.github.io/Hyrule-Compendium-API/#/">Hyrule Compendium API by Aarav Borthakur</a></p>
+    </section>
+  </footer>
+</body>
+
+</html>
