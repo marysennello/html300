@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM is READY, javascript a go")
-
+//PLAN
 //click on a sign (li.2 with in a li.1>ul.2), amend ul.1 with a li.1 containing text of li.2 selected
 //plan - define sign list elements as variables
 //add event listener to run function which will find text of li clicked and amend li after grand-parent??
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let signsToClick = document.querySelectorAll('.sign li');
   let signSelect = document.querySelectorAll('.sign-select');
 
-  //sign blocks in results container
+  //h2 of sign blocks in results container
   let sunSign = document.getElementById('sunSign');
   let moonSign = document.getElementById('moonSign');
   let risingSign = document.getElementById('risingSign');
@@ -41,18 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-
-  //event listener for clicking on a sign will reveal li element with sign name
+  //event listener for clicking on a sign will reveal li element with sign name, and update the results section titles
     for (let i = 0; i < signsToClick.length; i++){
       let signClicked = signsToClick[i];
       signClicked.addEventListener('click', populateSign)
-
+      //click reveals li with sign clicked
       function populateSign(){
         let blankSign = signClicked.parentElement.parentElement.nextElementSibling;
         blankSign.textContent = signClicked.innerHTML
         blankSign.classList.remove('sign-chosen-hidden');
         blankSign.classList.add('sign-chosen');
       }
+      //h2 in results sections update
+
     }
 
   //reveal results section

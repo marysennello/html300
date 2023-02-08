@@ -10,7 +10,6 @@ html {
 }
 
 body {
-
   background-image: url("../images/stars-unsplash.jpg");
   background-color: $forest-35;
   background-blend-mode: multiply;
@@ -27,7 +26,7 @@ body {
 header {
   padding: 1rem 2rem;
   height: 16rem;
-  margin-top: 0rem;
+  margin-top: 0;
   /*background-color: $forest;
   background-blend-mode: hard-light; */
   & h1 {
@@ -48,6 +47,7 @@ header {
 .sticky {
   background-color: $black-85;
   position: fixed;
+  z-index: 1000;
   padding-bottom: 2rem;
   height: 6rem;
   width: 100%;
@@ -57,9 +57,8 @@ header {
   background-color: $black;
   box-shadow: $shadow-1;
   animation-name: stickyHeader;
-  //animation-delay: 50ms;
-  animation-duration: 400ms;
-  animation-timing-function: ease-out;
+  animation-duration: 350ms;
+  animation-timing-function: linear;
   animation-direction: forwards;
 
   & h1 {
@@ -70,11 +69,11 @@ header {
 .sticky + nav {
   padding-top: 8rem;
 }
-/*trying to get this to work... */
+/*still trying to get this to work... */
 .unstick {
   animation-name: unstickHeader;
   animation-direction: forwards;
-  animation-duration: 400ms;
+  animation-duration: 350ms;
   //animation-delay: 0ms;
   animation-timing-function: ease-out;
   margin-bottom: 1rem;
@@ -86,17 +85,18 @@ header {
 @keyframes stickyHeader {
   0% {
     height: 16rem;
+    font-size: 0.5rem;
     border-radius: $border-outer-bottom;
     border-bottom-color: $forest;
     box-shadow: $inner-shadow;
   }
 
   35% {
-    background-color: $charcoal-dark-35;
+    background-color: $black-35;
   }
 
   85% {
-    background-color: $charcoal-dark-85;
+    background-color: $black-85;
   }
 
   100% {
@@ -112,16 +112,19 @@ header {
     font-size: 0.5rem;
     border-radius: $border-outer-bottom;
     border-bottom: 1px $forest solid;
-    background-color: $black-85;
+    background-color: $black;
   }
+
   35% {
-    background-color: $charcoal-dark-35;
+    background-color: $black-35;
     border-bottom: 1px $forest solid;
   }
+
   85% {
-    background-color: $charcoal-dark-85;
+    background-color: $black-35;
     border-bottom: 1px $forest solid;
   }
+
   100% {
     height: 16rem;
     border-radius: $border-outer-bottom;
@@ -129,26 +132,28 @@ header {
     font-size: 3.5rem;
   }
 }
-
 /*NAVIGATION*/
 nav {
   height: 4rem;
   padding: 0 15rem;
+
   & .nav-container {
     background-color: $charcoal-dark;
     border-radius: $border-outer;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: stretch;
     height: inherit;
-    padding: 0 15rem;
+    padding: 1rem;
   }
   /*created nav-link-box to prevent other links from moving when one is hovered on*/
   & .nav-link-box {
     width: 8rem;
+    display: flex;
     align-self: center;
     justify-content: center;
     text-align: center;
+
     & a {
       font-family: $font-inter;
       color: $grass;
@@ -177,6 +182,7 @@ nav {
         background-color: $charcoal;
         //transform: rotateY(-90deg) translateY(30px);
       }
+
       100% {
         opacity: 1;
         padding: 1rem 2rem;
@@ -193,13 +199,13 @@ nav {
         background-color: $charcoal;
         box-shadow: $inner-shadow;
       }
+
       100% {
         background-color: none;
       }
     }
   }
 }
-
 /*MAIN BODY CONTENT*/
 main {
   /*general*/
@@ -212,6 +218,7 @@ main {
   & h1 {
     font-family: $font-syne;
     text-align: center;
+    padding-top: 3rem;
   }
 
   & p {
@@ -234,6 +241,10 @@ main {
   & .natalChart {
     background-color: $gray;
     padding: 1rem;
+    & a {
+      color: $cream;
+      text-decoration: none;
+    }
   }
 
   & .resetCalculate {
@@ -352,6 +363,7 @@ main {
     }
   }
   /*end of container-select */
+
   /*SECTION FOR --RESULTS--OF BIG 3*/
   & .sign-chosen-hidden {
     display: none;
@@ -359,42 +371,43 @@ main {
 
   & .container {
     /*ANIMATION FOR BLOCKS SLIDING IN*/
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-    }
-    /*3 blocks to hold the 3 signs*/
-    /*class of .block is for each sign's content*/
-    & .block {
-      opacity: 0;
-      margin: 1rem;
-      padding: 1rem;
-      background-color: $charcoal;
-      border: 2px solid $forest-35;
-      border-radius: $border-outer;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      box-shadow: $inner-shadow;
-      @for $i from 1 through 3 {
-        &:nth-child(#{$i}) {
-          animation-name: showResults;
-          animation-duration: 300ms;
-          animation-delay: (300ms * $i) - 300;
-          animation-timing-function: ease-out;
-          animation-fill-mode: forwards;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 1rem 3rem;
+  }
+  /*3 blocks to hold the 3 signs*/
+  /*class of .block is for each sign's content*/
+  & .block {
+    opacity: 0;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: $charcoal;
+    border: 2px solid $forest-35;
+    border-radius: $border-outer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: $inner-shadow;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-name: showResults;
+        animation-duration: 300ms;
+        animation-delay: (300ms * $i) - 300;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+      @keyframes showResults {
+        0% {
+          opacity: 0;
+          transform: rotateY(-270deg) translateY(30px);
         }
-        @keyframes showResults {
-          0% {
-            opacity: 0;
-            transform: rotateY(-270deg) translateY(30px);
-          }
 
-          100% {
-            opacity: 1;
-            transform: rotateY(0deg) translateY(0px);
-          }
+        100% {
+          opacity: 1;
+          transform: rotateY(0deg) translateY(0px);
         }
+      }
       /*div.sign-img placeholder for image to pull from API*/
       & .sign-img {
         background-color: $charcoal-35;
@@ -428,7 +441,7 @@ footer {
   border: 2px solid $forest-35;
   box-shadow: $inner-shadow;
   padding: 3px 0;
-  min-height: 8rem;
+  min-height: 12rem;
 
   & h1 {
     font-family: $font-syne;
@@ -452,3 +465,95 @@ footer {
     text-decoration: underline;
   }
 }
+/*QUERIES FOR PHONE SIZE*/
+@media only screen and (max-width: 749px) and (min-width: 100px) {
+  body {
+    max-width: auto;
+  }
+
+  header h1 {
+    text-align: center;
+  }
+
+  nav {
+    //  display: none;
+    padding: 1rem;
+    margin-left: 0;
+  }
+
+  main h1 {
+    padding-top: 1rem;
+  }
+
+  .nav-container {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 1rem;
+    display: flex-wrap;
+    justify-content: center;
+  }
+
+  .nav-link-box {
+    padding-left: 0;
+    width: 5rem;
+    margin-left: 0;
+
+    & a {
+      animation: none;
+    }
+
+    & a:hover {
+      color: $cream;
+      animation: none;
+    }
+    @keyframes linkhover-exit {
+      0% {
+        padding: 1rem;
+        border-radius: $border-inner;
+        background-color: $charcoal;
+        box-shadow: $inner-shadow;
+      }
+
+      100% {
+        background-color: none;
+      }
+    }
+  }
+  /*container for buttons to choose sign*/
+  .container-select {
+    display: flex-wrap;
+    flex-wrap: wrap;
+  }
+  /*buttons*/
+  button {
+    display: inline-block;
+  }
+
+  button.calculate {
+    padding: 1rem;
+  }
+  /*container for results*/
+  #resultsContainer {
+    flex-wrap: wrap;
+
+    & div.sign-img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+} /*end of media query for phone size*/
+
+/*QUERIES FOR TABLETS*/
+  @media only screen and (min-width: 750px) and (max-width: 1154px) {
+    #resultsContainer {
+      flex-wrap: wrap;
+      padding: 1rem 3rem;
+
+     & div.sign-img {
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+
+}/*end of media query for tablets sizes*/
