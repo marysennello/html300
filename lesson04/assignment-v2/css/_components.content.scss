@@ -59,7 +59,7 @@ header {
   animation-name: stickyHeader;
   animation-duration: 350ms;
   animation-timing-function: linear;
-  animation-direction: forwards;
+  animation-direction: normal;
 
   & h1 {
     font-size: 1.5rem;
@@ -72,7 +72,7 @@ header {
 /*still trying to get this to work... */
 .unstick {
   animation-name: unstickHeader;
-  animation-direction: forwards;
+  animation-direction: normal;
   animation-duration: 350ms;
   //animation-delay: 0ms;
   animation-timing-function: ease-out;
@@ -201,7 +201,7 @@ nav {
       }
 
       100% {
-        background-color: none;
+
       }
     }
   }
@@ -468,7 +468,7 @@ footer {
 /*QUERIES FOR PHONE SIZE*/
 @media only screen and (max-width: 749px) and (min-width: 100px) {
   body {
-    max-width: auto;
+
   }
 
   header h1 {
@@ -489,7 +489,8 @@ footer {
     width: 100%;
     margin-left: 0;
     padding-left: 1rem;
-    display: flex-wrap;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -515,13 +516,13 @@ footer {
       }
 
       100% {
-        background-color: none;
+        //background-color: none;
       }
     }
   }
   /*container for buttons to choose sign*/
   .container-select {
-    display: flex-wrap;
+    display: flex;
     flex-wrap: wrap;
   }
   /*buttons*/
