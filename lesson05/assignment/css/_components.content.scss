@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -8,6 +9,62 @@ html {
     box-sizing: inherit;
 }
 
-.main {
-    padding: 2rem;
-}
+.page-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto, 12);
+  grid-template-rows: auto;
+  //@include media-query {}
+
+  & header, footer {
+    background-color: $forest;
+    color: $cream;
+    grid-column: 1 /span 12;
+    grid-row: auto / span 2;
+    text-align: center;
+    padding: 1rem;
+  }
+  & nav {
+    background-color: $grass;
+    color: $cream;
+    grid-column: 1 /span 12;
+    justify-self: stretch;
+    padding: 1rem 10%;
+  }
+  & .nav-container {
+    position: relative;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  & .main {
+      color: $cream;
+      grid-column: 1 / span 12;
+      grid-row: auto / span 3;
+      & .main-container {
+        width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+        & .sidebar {
+          padding: 2rem;
+          background-color: $steel;
+          border-top: 1px solid $charcoal;
+          width: 33%;
+          text-align: center;
+
+          & img {
+            max-height: 20%;
+            width: auto;
+            padding: 1rem;
+            border-radius: $border-inner;
+            background-color: $charcoal;
+          }
+        }
+        & .main-content {
+          padding: 2rem;
+          background-color: $charcoal;
+          width: 67%;
+          }
+      }
+  }
+} /*end of page container*/
