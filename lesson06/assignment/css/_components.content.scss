@@ -233,6 +233,7 @@ nav {
       padding: 1rem;
     }
   }/*END ---- STYLING FOR COMPENDIUM ENTRIES PAGE*/
+
   /*Champions - Image Page*/
   .champion-container {
     display: flex;
@@ -262,7 +263,7 @@ nav {
       }
     }
   }
-
+  /*media query for images page*/
   @include media-query(lg) {
     & .champion-container {
         & .champion-img {
@@ -298,7 +299,73 @@ nav {
         margin: 1rem 0;
       }
     }
+  } /*end images page*/
+
+    /*ACCORDION PAGE*/
+  & .accordion {
+    margin: 1rem 20%;
+    & .card-header {
+      background-color: $forest;
+      box-shadow: $inner-shadow;
+      & h2 {
+        text-align: left;
+        & .btn-link {
+          color: $grass;
+          text-decoration: none;
+          font-size: 1em;
+          width: 100%;
+          font-family: $font-syne;
+        }
+      }
+    }
+    & .card-body {
+      color: $charcoal-dark;
+      font-family: $font-inter;
+      background-color: $steel;
+      padding: 2em;
+      margin: 0 0 1em 0;
+      box-shadow: $shadow-2;
+      border-radius: $border-inner-bottom;
+      & img {
+        border-radius: $border-inner;
+        border: 1px solid $forest;
+      }
+    }
   }
+  @include media-query(mobile) {
+    & .accordion {
+      margin: 1rem 5%;
+      & .card-body {
+        padding: 1em;
+      }
+    }
+  }
+  @include media-query(tab) {
+    & .accordion {
+      margin: 1rem 10%;
+      & .card-body {
+        padding: 2em;
+      }
+    }
+  }
+  @include media-query(lg) {
+    & .accordion {
+      margin: 1rem 15%;
+      & .card-body {
+        padding: 2em;
+      }
+    }
+  }
+  @include media-query(xl) {
+    & .accordion {
+      margin: 1rem 25%;
+      & .card-body {
+        padding: 3rem;
+      }
+    }
+  }
+
+  //end of Accordion page
 }
 /*FOOTER*/
 footer {
