@@ -89,6 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //update results Section
 
+//tooltips
+const tooltips = document.querySelectorAll('.tt')
+tooltips.forEach(t => {
+  new bootstrap.Tooltip(t)
+})
 
 //end brackets
 })
