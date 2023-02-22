@@ -193,7 +193,7 @@ nav {
 
       }
     }
-  } /*end .container thread*/
+  } /*end nav.container thread*/
 
 /*mq for when nav collapses to hamburger*/
   @include media-query(mobile){
@@ -224,15 +224,15 @@ nav {
     text-align: center;
   }
   /*STYLING FOR COMPENDIUM ENTRIES PAGE*/
-  & .container {
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
-    & img {
-      border-radius: $border-outer;
-      padding: 1rem;
-    }
-  }/*END ---- STYLING FOR COMPENDIUM ENTRIES PAGE*/
+  // & .container {
+  //   justify-content: space-around;
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   & img {
+  //     border-radius: $border-outer;
+  //     padding: 1rem;
+  //   }
+  // }/*END ---- STYLING FOR COMPENDIUM ENTRIES PAGE*/
 
   /*Champions - Image Page*/
   .champion-container {
@@ -332,6 +332,7 @@ nav {
       }
     }
   }
+  /*media query for accordion page*/
   @include media-query(mobile) {
     & .accordion {
       margin: 1rem 5%;
@@ -365,8 +366,54 @@ nav {
     }
   }
 
-  //end of Accordion page
-}
+  /*end of Accordion page*/
+
+  /*START GRID PAGE*/
+  & .container {
+    & .row {
+      /*background-color: $forest;
+      height: 400px;
+      border: 1px solid $grass;*/
+      & .col, .col-2 {
+        border: 1px solid $cream;
+      }
+      & .astro-grid {
+        margin: 0.5rem;
+        background-color: $charcoal;
+        border-radius: $border-inner;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        box-shadow: $shadow-1;
+        & h2 {
+          color: $grass;
+        }
+        & h3 {
+          color: $steel;
+          padding: 0.5rem;
+        }
+        & img {
+          margin: 1rem;
+          padding: 0 0.5rem 1rem 0.5rem;
+          border-radius: $border-inner;
+        }
+    }
+  }/*end Row*/
+  @include media-query(ipad) {
+    div.col-md-2 {
+      writing-mode: vertical-rl;
+      text-orientation: sideways;
+    }
+  }
+  }
+  /*END GRID PAGE*/
+}//end .main section
+
+
+
+
+
 /*FOOTER*/
 footer {
   margin-top: 3rem;
@@ -377,7 +424,7 @@ footer {
   box-shadow: $inner-shadow;
   padding: 3px 0;
   // min-height: 12rem;
-  // position: fixed;
+  // position: fixed;*/
   // width: 100%;
   left: 0;
   bottom: 0;

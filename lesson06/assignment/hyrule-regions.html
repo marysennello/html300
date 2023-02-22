@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!--google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Serif:wght@400;700&family=Rufina:wght@700&family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
+  <!--jquery-->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <!--bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <!--my css-->
+  <link rel="stylesheet" href="css/style.css" />
+  <!--my js-->
+  <script src="index.js" charset="utf-8"></script>
+  <script src="a6index.js" charset="utf-8"></script>
+
+  <title>Assignment 06 - Bootstrap 4 - accordion</title>
+</head>
+
+<body>
+  <header id="header">
+    <div class="header-container">
+      <div class="header">
+        <h1 class="text-center">Hyrulian Astrology</h1>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg">
+    <button class="btn bg-light btn-light navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 container">
+        <li class="nav-item ">
+          <a class="nav-link" href="index.html">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="img-champions.html">Images Example</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="hyrule-regions.html">Accordion Example<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="grid.html">Grid Example</a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" href="compendium-entries.html">Just for Fun</a>
+        </li>-->
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main" id="main">
+    <section>
+      <h2>Regions and Subregions of Hyrule</h2>
+      <h3> for information purposes only</h3>
+      <p class="lead p-intro"> content WIP </p>
+    </section>
+    <!--ACCORDION -->
+
+  </main>
+
+</body>
+<footer>
+  <section>
+    <h1>Information</h1>
+    <span class="tt" data-bs-placement="top" title="this is a book">
+      <p>Astrological insights are referenced from <a href="https://a.co/d/0rDoknD">The Only Astrology Book You'll Ever Need</a> by Joanna Martine Woolfolk (2012)</p>
+    </span>
+    <span class="tt" data-bs-placement="bottom" title="these are websites">
+      <p>Images and Descriptions are referenced from <a href="https://gadhagod.github.io/Hyrule-Compendium-API/#/">Hyrule Compendium API by Aarav Borthakur</a> and <a href="https://zelda.fandom.com/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild">The Legend of Zelda: Breath of the Wild Wiki</a></p>
+    </span>
+    <p>Created by Mary Sennello 2023</p>
+  </section>
+</footer>
+
+</html>
