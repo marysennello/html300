@@ -1,13 +1,130 @@
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,
 *:after,
 *:before {
     box-sizing: inherit;
+    font-family: $font-inter;
 }
 
-.main {
-    padding: 2rem;
-}
+.page-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto, 12);
+  grid-template-rows: auto;
+  background-color: $steel;
+  @include media-query(tab) {
+  padding: 1rem;
+  }
+
+  & header, footer {
+    background-color: $black;
+    color: $cream;
+    grid-column: 1 /span 12;
+    grid-row: auto / span 2;
+    text-align: center;
+    padding: 1rem;
+    & h1, h2 {
+      font-family: $font-syne;
+    }
+    //& h2 {
+  //    font-family: $font-syne;
+    //}
+  }
+  & nav {
+    background-color: $charcoal;
+    color: $cream;
+    grid-column: 1 /span 12;
+    justify-self: stretch;
+    padding: 1rem 10%;
+    @include media-query(mobile) {
+      padding: 1rem;
+    }
+  }
+  & .nav-container {
+    position: relative;
+    padding: 1rem 10%;
+    display: flex;
+    justify-content: space-between;
+    & a {
+      color: $grass;
+      font-family: $font-inter;
+      text-decoration: none;
+    }
+    @include media-query(mobile) {
+      padding: 1rem;
+    }
+  }
+  /*main content*/
+  & .main {
+      color: $cream;
+      grid-column: 1 / span 12;
+      grid-row: auto / span 3;
+      font-family: $font-inter;
+      padding: 1rem 0;
+      /*main-container flex box to hold left sidebar and right main content. left sidebar will be a grid of 1 column 2 rows (or more) for title, image, possible other details */
+      & .main-container {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        /*left side title and image, on smaller screens will become full width instead*/
+        & .sidebar {
+          background-color: $steel;
+          border-top: 1px solid $forest;
+          width: 33%;
+          padding: 1rem;
+          margin-bottom: 1rem;
+          text-align: center;
+          display: grid;
+          align-items: start;
+
+          & h2 {
+            grid-row: 1 / span 1;
+
+          }
+          /*div.img container to hold image pulled in from api*/
+          & .img {
+            max-width: 100%;
+            width: auto;
+            height: 2fr;
+            grid-row: 2 / span 1;
+            height: 250px;
+            width: 250px;
+            justify-self: center;
+            border-radius: $border-inner;
+            background-color: $charcoal;
+            & img {
+              max-width: 100%;
+              height: auto;
+              padding: 1rem;
+            }
+          }
+        }
+        /*right side title and image, on smaller screens will become full width instead*/
+        & .main-content {
+          padding: 1rem;
+          margin-bottom: 1rem;
+          //margin-left: 1rem;
+          background-color: $forest;
+          //border-top: 2px solid $steel;
+          width: 60%;
+          border-radius: $border-inner
+          }
+        @include media-query(mobile) {
+          & .sidebar {
+            width: 100%;
+            height: auto;
+            padding-bottom: 1rem;
+          }
+          & .main-content {
+            width: 100%;
+            margin: 1rem;
+          }
+        }
+      }
+  }
+} /*end of page container*/

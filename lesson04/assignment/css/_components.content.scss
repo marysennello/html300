@@ -1,0 +1,454 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+
+  background-image: url("../images/stars-unsplash.jpg");
+  background-color: $forest-35;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-attachment: fixed;
+  /*background-color: $cream;*/
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+/*HEADER*/
+header {
+  padding: 1rem 2rem;
+  height: 16rem;
+  margin-top: 0rem;
+  /*background-color: $forest;
+  background-blend-mode: hard-light; */
+  & h1 {
+    font-family: $font-syne;
+    color: $cream;
+    /*mix-blend-mode: exclusion;*/
+    font-size: 3.5rem;
+  }
+
+  & .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+  }
+}
+
+.sticky {
+  background-color: $black-85;
+  position: fixed;
+  padding-bottom: 2rem;
+  height: 6rem;
+  width: 100%;
+  top: 0;
+  border-radius: $border-outer-bottom;
+  border-bottom: 1px $forest solid;
+  background-color: $black;
+  box-shadow: $shadow-1;
+  animation-name: stickyHeader;
+  //animation-delay: 50ms;
+  animation-duration: 400ms;
+  animation-timing-function: ease-out;
+  animation-direction: forwards;
+
+  & h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.sticky + nav {
+  padding-top: 8rem;
+}
+/*trying to get this to work... */
+.unstick {
+  animation-name: unstickHeader;
+  animation-direction: forwards;
+  animation-duration: 400ms;
+  //animation-delay: 0ms;
+  animation-timing-function: ease-out;
+  margin-bottom: 1rem;
+
+  & h1 {
+    font-size: 3.5rem;
+  }
+}
+@keyframes stickyHeader {
+  0% {
+    height: 16rem;
+    border-radius: $border-outer-bottom;
+    border-bottom-color: $forest;
+    box-shadow: $inner-shadow;
+  }
+
+  35% {
+    background-color: $charcoal-dark-35;
+  }
+
+  85% {
+    background-color: $charcoal-dark-85;
+  }
+
+  100% {
+    height: 6rem;
+    border-radius: $border-outer-bottom;
+    border-bottom: 1px $forest solid;
+    background-color: $black;
+  }
+}
+@keyframes unstickHeader {
+  0% {
+    height: 6rem;
+    font-size: 0.5rem;
+    border-radius: $border-outer-bottom;
+    border-bottom: 1px $forest solid;
+    background-color: $black-85;
+  }
+  35% {
+    background-color: $charcoal-dark-35;
+    border-bottom: 1px $forest solid;
+  }
+  85% {
+    background-color: $charcoal-dark-85;
+    border-bottom: 1px $forest solid;
+  }
+  100% {
+    height: 16rem;
+    border-radius: $border-outer-bottom;
+    box-shadow: $inner-shadow;
+    font-size: 3.5rem;
+  }
+}
+
+/*NAVIGATION*/
+nav {
+  height: 4rem;
+  padding: 0 15rem;
+  & .nav-container {
+    background-color: $charcoal-dark;
+    border-radius: $border-outer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+    padding: 0 15rem;
+  }
+  /*created nav-link-box to prevent other links from moving when one is hovered on*/
+  & .nav-link-box {
+    width: 8rem;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    & a {
+      font-family: $font-inter;
+      color: $grass;
+      text-align: center;
+      font-weight: 400;
+      text-decoration: none;
+      animation: linkhover-exit;
+      animation-duration: 900ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+    /*hover on nav links background appear*/
+    & a:hover {
+      color: $cream;
+      animation-name: linkhover;
+      animation-duration: 600ms;
+      animation-delay: 50ms;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+    /*KEY FRAMES FOR NAV LINKS - ON HOVER EXPAND PADDING AND BG COLOR, ON EXIT REMOVE*/
+    @keyframes linkhover {
+      0% {
+        opacity: 0;
+        padding: 0;
+        background-color: $charcoal;
+        //transform: rotateY(-90deg) translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        padding: 1rem 2rem;
+        border-radius: $border-inner;
+        background-color: $charcoal;
+        box-shadow: $inner-shadow;
+        //transform: rotateY(0deg) translateY(0px);
+      }
+    }
+    @keyframes linkhover-exit {
+      0% {
+        padding: 1rem 2rem;
+        border-radius: $border-inner;
+        background-color: $charcoal;
+        box-shadow: $inner-shadow;
+      }
+      100% {
+        background-color: none;
+      }
+    }
+  }
+}
+
+/*MAIN BODY CONTENT*/
+main {
+  /*general*/
+  padding-top: 1rem;
+  color: $cream;
+  margin-left: 8rem;
+  margin-right: 8rem;
+  min-height: 36rem;
+
+  & h1 {
+    font-family: $font-syne;
+    text-align: center;
+  }
+
+  & p {
+    font-family: $font-inter;
+    text-align: center;
+  }
+  /*button for results and discovering user's signs*/
+  & button {
+    color: $cream;
+    text-align: center;
+    border-radius: $border-outer;
+    font-family: $font-inter;
+  }
+
+  & .calculate {
+    padding: 1rem 6rem;
+    background-color: $charcoal;
+  }
+
+  & .natalChart {
+    background-color: $gray;
+    padding: 1rem;
+  }
+
+  & .resetCalculate {
+    padding: 1rem 6rem;
+    background-color: $charcoal;
+  }
+
+  & button:hover {
+    background: $charcoal-dark;
+    cursor: pointer;
+    box-shadow: $shadow-1;
+  }
+  /*SECTION FOR --SELECTING-- BIG 3*/
+  /*flex box for selecting big 3*/
+  & .container-select {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: $cream;
+    font-family: $font-serif;
+    /*Each section is constructed:
+    ul.sign-select
+      li
+        ul.sign
+          li(13)
+      li.sign-chosen (will only appear after selecting sign)*/
+    & ul {
+      list-style: none;
+      padding: 1rem;
+      margin: 1rem;
+      display: inline-block;
+      background: $forest;
+      border-radius: $border-inner;
+    }
+
+    & li {
+      width: 150px;
+      height: 24px;
+      line-height: 24px;
+      position: relative;
+      text-transform: uppercase;
+      //font-size: 14px;
+      cursor: pointer;
+    }
+    /*hide list of signs until hovered*/
+    & .sign {
+      display: none;
+    }
+    /*reveal list of signs while hovering on sign-selector box*/
+    & .sign-select:hover {
+      background-color: $forest;
+      box-shadow: $inner-shadow;
+      /*ul that contains signs as li*/
+      & .sign {
+        display: block;
+        background-color: $forest-85;
+        border-radius: $border-inner-bottom;
+        box-shadow: $shadow-2;
+        width: 150px;
+        margin-top: -2px;
+        margin-left: 0;
+        /*animated dropdown of signs*/
+        & li {
+          background-color: $forest;
+          box-shadow: $shadow-1;
+          //border-radius: $border-inner;
+          margin: 0;
+          width: 120px;
+          opacity: 0;
+          /*animation based on example from lesson4*/
+          @for $i from 1 through 13 {
+            &:nth-child(#{$i}) {
+              animation-name: sign;
+              animation-duration: 50ms;
+              animation-delay: (50ms * $i) - 100;
+              animation-timing-function: ease-in-out;
+              animation-fill-mode: forwards;
+            }
+            @keyframes sign {
+              0% {
+                opacity: 0;
+                transform: rotateY(-90deg) translateY(30px);
+              }
+
+              100% {
+                opacity: 1;
+                transform: rotateY(0deg) translateY(0px);
+              }
+            }
+          }
+        }
+        /*changes for hover and click on signs to select*/
+        & li:hover {
+          background-color: $charcoal-dark;
+          box-shadow: $shadow-2;
+          border-radius: $border-inner;
+        }
+
+        & li:active {
+          background-color: $grass;
+          color: $forest;
+        }
+      }
+    }
+    /*HIDE li ELEMENT OF USER'S SIGN UNTIL SELECTED*/
+    & .sign-chosen-hidden {
+      display: none;
+    }
+
+    & .sign-chosen {
+      display: block;
+      font-family: $font-syne;
+      border-radius: $border-inner;
+      color: $forest;
+      background-color: $grass;
+    }
+  }
+  /*end of container-select */
+  /*SECTION FOR --RESULTS--OF BIG 3*/
+  & .sign-chosen-hidden {
+    display: none;
+  }
+
+  & .container {
+    /*ANIMATION FOR BLOCKS SLIDING IN*/
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+    /*3 blocks to hold the 3 signs*/
+    /*class of .block is for each sign's content*/
+    & .block {
+      opacity: 0;
+      margin: 1rem;
+      padding: 1rem;
+      background-color: $charcoal;
+      border: 2px solid $forest-35;
+      border-radius: $border-outer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: $inner-shadow;
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          animation-name: showResults;
+          animation-duration: 300ms;
+          animation-delay: (300ms * $i) - 300;
+          animation-timing-function: ease-out;
+          animation-fill-mode: forwards;
+        }
+        @keyframes showResults {
+          0% {
+            opacity: 0;
+            transform: rotateY(-270deg) translateY(30px);
+          }
+
+          100% {
+            opacity: 1;
+            transform: rotateY(0deg) translateY(0px);
+          }
+        }
+      /*div.sign-img placeholder for image to pull from API*/
+      & .sign-img {
+        background-color: $charcoal-35;
+        border-radius: 38px;
+        box-shadow: $shadow-1;
+        width: 300px;
+        height: 300px;
+        background-image: url("../images/botw-star.png");
+        background-size: cover;
+        overflow: hidden;
+        align-self: center;
+        box-shadow: $shadow-2;
+      }
+
+      & h2,
+      h3 {
+        font-family: $font-syne;
+        text-align: center;
+        margin-top: 0;
+      }
+    }
+  }
+  /*final bracket for main*/
+}
+
+footer {
+  margin-top: 3rem;
+  color: $cream;
+  background-color: $forest;
+  border-radius: $border-outer-top;
+  border: 2px solid $forest-35;
+  box-shadow: $inner-shadow;
+  padding: 3px 0;
+  min-height: 8rem;
+
+  & h1 {
+    font-family: $font-syne;
+    text-align: center;
+  }
+
+  & p {
+    font-family: $font-inter;
+    text-align: center;
+  }
+
+  & a {
+    font-family: $font-inter;
+    color: $grass;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  & a:hover {
+    color: $cream;
+    text-decoration: underline;
+  }
+}
