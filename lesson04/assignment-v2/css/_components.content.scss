@@ -295,7 +295,7 @@ main {
       display: none;
     }
     /*reveal list of signs while hovering on sign-selector box*/
-    & .sign-select:active {
+    & .sign-select:hover {
       background-color: $forest;
       box-shadow: $inner-shadow;
       z-index: 1;
