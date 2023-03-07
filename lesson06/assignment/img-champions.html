@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!--google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Serif:wght@400;700&family=Rufina:wght@700&family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
+  <!--jquery-->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <!--bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <!--my css-->
+  <link rel="stylesheet" href="css/style.css" />
+  <!--my js-->
+  <script src="index.js" charset="utf-8"></script>
+
+  <title>Assignment 06 - Bootstrap 4</title>
+</head>
+
+<body>
+  <header id="header">
+    <div class="header-container">
+      <div class="header">
+        <h1 class="text-center">Hyrulian Astrology</h1>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg">
+    <button class="btn bg-light btn-light navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0 container">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="img-champions.html">Images Example</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="hyrule-regions.html">Accordion Example</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="grid.html">Grid Example</a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" href="compendium-entries.html">Just for Fun</a>
+        </li>-->
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main">
+    <section>
+      <h2>Hyrule's Champions and the Elements</h2>
+      <h3> based purely on what my heart tells me but this content is just so obvious to me</h3>
+      <p class="lead p-intro"> content WIP </p>
+    </section>
+    <div class="champion-container">
+      <!--champion 1-->
+      <div class="champion-img">
+        <img class="img-fluid" src="images/urbosa-botw-intro.png" alt="Urbosa">
+      </div>
+      <div class="champion-description">
+        <h2>Fire Sign Rep: Urbosa</h2>
+        <h3>Aries, Leo, Sagittarius</h3>
+        <p class="text-left">Chief of the Gerudo, a natural leader, capable of manipulating lightening, and trouble containing her emotions, there is no doubt that Urbosa represents the Fire signs. duty, organization, "urbosa's fury", fiercely loyal.</p>
+      </div>
+
+      <!--champion 2-->
+      <div class="champion-description">
+        <h2>Earth Sign Rep: Daruk</h2>
+        <h3>Taurus, Virgo, Capricorn</h3>
+        <p class="text-left">Daruk, and his race of Goron, are undeniably of the Earth. Their strength and resiliance strongly reverberate with Earth signs. Sometimes stubborn, looking for the bigger picture, and moving purposefully so as not to misstep or make a wrong decision are things you could say about both. </p>
+      </div>
+      <div class="champion-img">
+        <img class="img-fluid" src="images/daruk-botw-intro.png" alt="daruk">
+      </div>
+
+      <!--champion 3-->
+      <div class="champion-img">
+        <img class="img-fluid" src="images/revali-botw-intro.png" alt="revali">
+      </div>
+      <div class="champion-description">
+        <h2>Air Sign Rep: Revali</h2>
+        <h3>Gemini, Libra, Aquarius</h3>
+        <p class="text-left">Air signs are often seen as intellectual and analytical, and Revali is exactly that. The weapons of the Rito are known for precision and distance, and Revali's personality matches the sometimes boastful and abrasive personalities of Air signs. Hide insecurities. "Coasting through life" "winging it" updraft to soar high in the air.n his appearance is based on a bird of prey </p>
+      </div>
+
+      <!--champion 4-->
+      <div class="champion-description">
+        <h2>Water Sign Rep: Mipha</h2>
+        <h3>Pisces, Cancer, Scorpio</h3>
+        <p class="text-left">Let's start with the obvious, ok? Mipha is the princess of the Zora, an aquatic race adept at swimming and thriving underwater. </p>
+      </div>
+      <div class="champion-img">
+        <img class="img-fluid" src="images/mipha-botw-intro.png" alt="mipha">
+      </div>
+    </div>
+  </main>
+
+</body>
+<footer>
+  <section>
+    <h1>Information</h1>
+    <span class="tt" data-bs-placement="top" title="this is a book">
+      <p>Astrological insights are referenced from <a href="https://a.co/d/0rDoknD">The Only Astrology Book You'll Ever Need</a> by Joanna Martine Woolfolk (2012)</p>
+    </span>
+    <span class="tt" data-bs-placement="bottom" title="these are websites">
+      <p>Images and Descriptions are referenced from <a href="https://gadhagod.github.io/Hyrule-Compendium-API/#/">Hyrule Compendium API by Aarav Borthakur</a> and <a href="https://zelda.fandom.com/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild">The Legend of Zelda: Breath of the Wild Wiki</a></p>
+    </span>
+    <p>Created by Mary Sennello 2023</p>
+  </section>
+</footer>
+</html>
