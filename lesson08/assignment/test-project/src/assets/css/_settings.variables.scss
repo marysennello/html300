@@ -1,0 +1,50 @@
+// Colors
+$cream: #fdffe0;
+$grass: #92c582;
+$steel: #86a5a9;
+$gray: #767676;
+$black: rgb( 0,0,0);
+$black-85: rgba( 0,0,0, 0.85);
+$black-35: rgba( 0,0,0, 0.35);
+$forest: #536f50;
+$forest-15: rgba( 83, 111, 80, 0.15);
+$forest-35: rgba( 83, 111, 80, 0.35);
+$forest-85: rgba( 83, 111, 80, 0.85);
+
+$charcoal: #36454F;
+$charcoal-35: rgba( 54, 69, 79, 0.35);
+$charcoal-dark: #242f36;
+$charcoal-dark-35: rgba( 36, 47, 54, 0.35);
+$charcoal-dark-85: rgba( 36, 47, 54, 0.85);
+
+//font
+$font-serif: 'Rufina', serif;
+$font-serif-2: 'Noto Serif', serif;
+$font-syne:'Syne', sans-serif;
+$font-inter: 'Inter', sans-serif;
+
+//shadows
+$shadow-1: 0 15px 6px rgba(0, 0, 0, 0.01), 0 8px 5px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.09), 0 0 0 rgba(0, 0, 0, 0.09);
+$shadow-2: 0 15px 6px rgba(0, 0, 0, 0.01), 0 8px 5px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.08);
+$shadow-3: 0 15px 6px rgba(0, 0, 0, 0.5), 0 8px 5px rgba(0, 0, 0, 0.05);
+/* Inner Shadow */
+$inner-shadow: inset 0px 46px 19px rgba(0, 0, 0, 0.01), inset 0px 26px 16px rgba(0, 0, 0, 0.03), inset 0px 12px 12px rgba(0, 0, 0, 0.05), inset 0px 3px 6px rgba(0, 0, 0, 0.05);
+
+//border radii
+$border-outer: 80px;
+$border-outer-bottom: 0 0 80px 80px;
+$border-outer-top: 80px 80px 0 0;
+$border-inner: 40px;
+$border-inner-bottom: 0 0 40px 40px;
+$border-outer-top2: 40px 40px 0 0;
+
+
+//$black: #000000;
+//$green: #7acb00;
+//$pink: #ff0097;
+//$red: #F1352B;
+//$orange: #ff6600;
+//$yellow: #ffb617;
+//$robins: #01c1d6;
+//$purple: #6e27c5;
+//$blue: #150f96;
